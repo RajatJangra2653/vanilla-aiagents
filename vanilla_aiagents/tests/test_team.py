@@ -1,3 +1,4 @@
+from typing import Annotated
 import unittest
 import os, logging, sys
 
@@ -29,7 +30,7 @@ class TestTeam(unittest.TestCase):
 
     def test_transitions(self):
         # Telling the agents to set context variables implies calling a pre-defined function call
-        first = Agent(id="first", llm=self.llm, description="Agent that sets context variables", system_message = """You are part of an AI process
+        first = Agent(id="first", llm=self.llm, description="Agent that sets context variables", system_message="""You are part of an AI process
         Your task is to set a context for the next agent to continue the conversation.
 
         DO set context variable "CHANNEL" to "voice" and "LANGUAGE" to "en"
@@ -38,7 +39,7 @@ class TestTeam(unittest.TestCase):
         """)
 
         # Second agent might have its system message extended automatically with the context from the ongoing conversation
-        second = Agent(id="second", llm=self.llm, description="Agent that uses context variables to answer", system_message = """You are part of an AI process
+        second = Agent(id="second", llm=self.llm, description="Agent that uses context variables to answer", system_message="""You are part of an AI process
         Your task is to continue the conversation based on the context set by the previous agent.
         When asked, you can use variable provide in CONTEXT to generate the response.
 
@@ -58,7 +59,7 @@ class TestTeam(unittest.TestCase):
         self.assertIn("voice", workflow.conversation.messages[3]["content"], "Expected second agent to recognize context variable CHANNEL")
 
     def test_use_tools(self):
-        first = Agent(id="first", llm=self.llm, description="Agent1", system_message = """You are part of an AI process
+        first = Agent(id="first", llm=self.llm, description="Agent1", system_message="""You are part of an AI process
         Your task is to support the user inquiry by providing the user profile.
         """)
         
@@ -66,7 +67,7 @@ class TestTeam(unittest.TestCase):
         def get_user_profile():
             return "User profile: {\"name\": \"John\", \"age\": 30}"
 
-        second = Agent(id="second", llm=self.llm, description="Agent2", system_message = """You are part of an AI process
+        second = Agent(id="second", llm=self.llm, description="Agent2", system_message="""You are part of an AI process
         Your task is to support the user inquiry by providing the user balance.
         """)
         
@@ -84,24 +85,24 @@ class TestTeam(unittest.TestCase):
         self.assertEqual(second.id, workflow.conversation.messages[-1]["name"], "Expected user balance to be provided")
         
     def test_not_use_structured_output(self):
-        first = Agent(id="first", llm=self.llm, description="Agent1", system_message = """You are part of an AI process
-        Your task is to support the user inquiry by providing the user profile.
+        first = Agent(id="first", llm=self.llm, description="Agent1", system_message="""You are part of an AI process
+        Your task is to support the user inquiry.
         """)
         
         @first.register_tool(name="get_user_profile", description="Get the user profile")
-        def get_user_profile():
+        def get_user_profile() -> Annotated[str, "The user profile, containing name and age"]:
             return "User profile: {\"name\": \"John\", \"age\": 30}"
 
-        second = Agent(id="second", llm=self.llm, description="Agent2", system_message = """You are part of an AI process
-        Your task is to support the user inquiry by providing the user balance.
+        second = Agent(id="second", llm=self.llm, description="Agent2", system_message="""You are part of an AI process
+        Your task is to support the user inquiry.
         """)
         
         @second.register_tool(name="get_user_balance", description="Get the user balance")
-        def get_user_balance():
+        def get_user_balance() -> Annotated[str, "The user balance in USD"]:
             return "User balance: $100"
         
-        flow = Team(id="flow", description="", members=[first, second], llm=self.llm, 
-                    stop_callback=lambda x: len(x) > 3, 
+        flow = Team(id="flow", description="", members=[first, second], llm=self.llm,
+                    stop_callback=lambda messages: len(messages) == 3,
                     include_tools_descriptions=True,
                     use_structured_output=False)
         workflow = Workflow(askable=flow)
