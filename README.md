@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="Vanilla Agents Logo" width="100" style="margin-bottom: 1em; border-radius: 50%;" />
+  <img src="logo.png" alt="Vanilla Agents Logo" width="100" />
   
   [![Test status](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg)](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml)
   <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
