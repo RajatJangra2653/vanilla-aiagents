@@ -1,16 +1,11 @@
-<div style="text-align: center; margin: 2em 0;">
+<div align="center">
   <img src="logo.png" alt="Vanilla Agents Logo" width="100" style="margin-bottom: 1em; border-radius: 50%;" />
-  <p>
-    <a href="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml">
-      <img src="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg" alt="Test status" />
-    </a>
-    <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
-      <img src="https://codecov.io/gh/<your-username>/<your-repo>/branch/main/graph/badge.svg?token=<your-codecov-token>" alt="codecov" />
-    </a> -->
-    <a href="https://Azure-Samples.github.io/vanilla-aiagents/">
-      <img src="https://img.shields.io/badge/GitHub%20Pages-Online-success" alt="GitHub Pages" />
-    </a>
-  </p>
+  
+  [![Test status](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg)](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml)
+  <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
+    <img src="https://codecov.io/gh/<your-username>/<your-repo>/branch/main/graph/badge.svg?token=<your-codecov-token>" alt="codecov" />
+  </a> -->
+  [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Online-success)](https://Azure-Samples.github.io/vanilla-aiagents/)
 </div>
 
 # Vanilla AI Agents
