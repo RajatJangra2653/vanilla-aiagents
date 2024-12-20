@@ -1,4 +1,4 @@
-from invoke import task, run
+from invoke import task
 
 @task
 def build(c, version: str):
@@ -7,7 +7,7 @@ def build(c, version: str):
 @task
 def test(c, test_path: str = "vanilla_aiagents/tests/", test_case: str = ""):
     test_case_option = f"-k {test_case}" if test_case else ""
-    coverage_option = f"--cov-append" if test_case else ""
+    coverage_option = "--cov-append" if test_case else ""
     
     # Run tests with coverage
     c.run(f"pytest --cov=vanilla_aiagents --cov-report=term-missing --cov-report=html {coverage_option} --cov-config=.coveragerc {test_case_option} {test_path}")
@@ -23,12 +23,10 @@ def build_grpc(c):
     proto_path = "vanilla_aiagents/vanilla_aiagents/remote"
     proto_file = f"{proto_path}/remote.proto"
     c.run(f"python -m grpc_tools.protoc -I{proto_path} --python_out={proto_path} --grpc_python_out={proto_path} {proto_file}")
-    # Replace the import in remote_pb2_grpc.py
-    # c.run("sed -i 's/from vanilla_aiagents.vanilla_aiagents.remote import remote_pb2/from vanilla_aiagents.remote import remote_pb2/' vanilla_aiagents/vanilla_aiagents/remote/remote_pb2_grpc.py")
     
 @task
 def docs(c):
-    c.run("cd vanilla_aiagents && pdoc --output-dir docs -d markdown vanilla_aiagents !vanilla_aiagents.remote.grpc")
+    c.run("cd vanilla_aiagents && pdoc --output-dir docs -d markdown --logo https://raw.githubusercontent.com/Azure-Samples/vanilla-aiagents/main/logo.png vanilla_aiagents !vanilla_aiagents.remote.grpc")
     
 @task
 def check_lint(c):

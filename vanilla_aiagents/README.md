@@ -1,6 +1,6 @@
 # Vanilla AI Agents
 
-Sample package demonstrating how to create a simple agenting application without using any specific framework.
+A library demonstrating how to create a simple agenting application without using any specific framework.
 
 ## Features
 
