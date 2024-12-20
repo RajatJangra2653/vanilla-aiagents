@@ -1,19 +1,21 @@
+<div style="text-align: center; margin: 2em 0;">
+  <img src="logo.png" alt="Vanilla Agents Logo" width="100" style="margin-bottom: 1em; border-radius: 50%;" />
+  <p>
+    <a href="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml">
+      <img src="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg" alt="Test status" />
+    </a>
+    <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
+      <img src="https://codecov.io/gh/<your-username>/<your-repo>/branch/main/graph/badge.svg?token=<your-codecov-token>" alt="codecov" />
+    </a> -->
+    <a href="https://Azure-Samples.github.io/vanilla-aiagents/">
+      <img src="https://img.shields.io/badge/GitHub%20Pages-Online-success" alt="GitHub Pages" />
+    </a>
+  </p>
+</div>
+
 # Vanilla AI Agents
 
-<div style="display: flex; align-items: center; margin: 2em 0;">
-  <img src="logo.png" alt="Vanilla Agents Logo" width="50" style="flex: 1; margin-right: 2em;" />
-  <div style="flex: 2;">
-    <p>
-      <a href="https://github.com/Azure-Samples/genai-vanilla-agents/actions/workflows/pytest.yml">
-        <img src="https://github.com/Azure-Samples/genai-vanilla-agents/actions/workflows/pytest.yml/badge.svg" alt="Test status" />
-      </a>
-      <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
-        <img src="https://codecov.io/gh/<your-username>/<your-repo>/branch/main/graph/badge.svg?token=<your-codecov-token>" alt="codecov" />
-      </a> -->
-    </p>
-    <p>Lightweight library demonstrating how to create a simple agenting application without using any specific framework.</p>
-  </div>
-</div>
+Lightweight library demonstrating how to create a simple agenting application without using any specific framework.
 
 ## Table of Contents
 
