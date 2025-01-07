@@ -1,16 +1,15 @@
 <div align="center">
   <img src="logo.png" alt="Vanilla Agents Logo" width="100" />
-  
-  [![Test status](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg)](https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml)
-  <!-- <a href="https://codecov.io/gh/<your-username>/<your-repo>">
-    <img src="https://codecov.io/gh/<your-username>/<your-repo>/branch/main/graph/badge.svg?token=<your-codecov-token>" alt="codecov" />
-  </a> -->
-  [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Online-success)](https://Azure-Samples.github.io/vanilla-aiagents/)
+
+  <h3 align="center">Vanilla AI Agents</h3>
+
+  <a href="https://github.com/azure-samples/vanilla-aiagents/main/LICENSE.md"><img src="https://img.shields.io/github/license/Azure-Samples/vanilla-aiagents" alt="License" /></a>
+  <a href="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml"><img src="https://github.com/Azure-Samples/vanilla-aiagents/actions/workflows/pytest.yml/badge.svg" alt="Test status" /></a>
+  <a href="https://github.com/Azure-Samples/vanilla-aiagents/releases"><img src="https://img.shields.io/github/v/release/Azure-Samples/vanilla-aiagents" alt="Releases" /></a>
+  <a href="https://Azure-Samples.github.io/vanilla-aiagents/"><img src="https://img.shields.io/badge/GitHub%20Pages-Online-success" alt="GitHub Pages" /></a>
+
+  <p>Lightweight library demonstrating how to create agenting application without using any specific framework.</p>
 </div>
-
-# Vanilla AI Agents
-
-Lightweight library demonstrating how to create a simple agenting application without using any specific framework.
 
 ## Table of Contents
 
